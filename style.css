@@ -1,0 +1,136 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    overflow: hidden;
+    animation: shakebody linear 6s infinite;
+}
+.sky{
+    height: 100vh;
+    width: 100vw;
+    background-image: url(background.jpg);
+    background-repeat: no-repeat;
+    position: absolute;
+}
+
+.trees{
+    height: 100vh;
+    width: 100vw;
+    background-image: url(trees.png);
+    background-size: cover; 
+    position: absolute;
+    top: -144px; 
+    filter: contrast(200%);
+
+}
+.track{
+    height: 60vh;
+    width: 800vw;
+    background-image: url(track.png);
+    background-repeat: repeat-x; 
+    position: absolute;
+    top: 70vh;
+    animation: carMove linear 13s infinite;
+
+}
+
+.car{
+    height: 100px;
+    width: 380px;
+    background-image: url(car_body.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 444px;
+    bottom:30vh;
+    filter: hue-rotate(192deg);
+    animation: shake linear .3s infinite;
+}
+.wheel1 img{
+    width: 77px;
+    position: relative;
+    top:42px;
+    left:42px;
+    filter: contrast(200%);
+    animation: wheelRotation linear .16s infinite;
+}
+
+
+.wheel2 img{
+    width: 77px;
+    position: relative;
+    top: -39px;
+    left: 235px;
+    filter: contrast(200%);
+    animation: wheelRotation linear .16s infinite;
+
+}
+
+@keyframes wheelRotation
+{
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes carMove
+{
+    100%{
+        transform: translateX(-500vw);
+    }
+}
+
+@keyframes shake
+{
+    0%{
+        transform: translateY(-5px);
+    }
+    50%{
+        transform: translateY(5px);
+    }
+    100%{
+        transform: translateY(-5px);
+    }
+}
+@keyframes shakebody
+{
+    0%{
+        transform: translateY(-50px);
+    }
+    50%{
+        transform: translateY(50px);
+    }
+    100%{
+        transform: translateY(-50px);
+    }
+}
+
+/* Responsiv Css */
+@media(max-width:992px){
+    .car{
+        left: 40%;
+    }
+}
+@media(max-width:768px){
+    .car{
+        left: 30%;
+    }
+}
+@media(max-width:576px){
+    .car{
+        left: 10%;
+        height: 80px;
+        width: 320px;
+    }
+    .wheel1 img{ 
+    width: 59px;
+    top: 35px;
+    left: 40px;
+    }
+    .wheel2 img{
+        width: 60px;
+        top: -27px;
+        left: 200px;
+    }
+}
